@@ -5,6 +5,8 @@
         "iris.script": "objectscript"
       },
     "objectscript.conn" :{
+      "host": "localhost",
+      "port": 52796,
       "ns": "IRISAPP",
       "username": "_SYSTEM",
       "password": "SYS",
@@ -16,7 +18,6 @@
       "links": {
         "Production": "http://localhost:${port}/csp/irisapp/EnsPortal.ProductionConfig.zen?PRODUCTION=dc.Demo.Production",
         "Rule": "http://localhost:${port}/csp/irisapp/EnsPortal.RuleEditor.zen?RULE=dc.Demo.FilterPostsRoutingRule"
-        
       }
     },
     "sqltools.connections": [

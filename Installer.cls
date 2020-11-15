@@ -16,7 +16,10 @@ XData setup
        
     />
   </Namespace>
-
+  <Namespace Name="USER">
+    <Invoke Class="App.Installer" Method="enableAnalytics" CheckStatus="1">
+    </Invoke>
+  </Namespace>
 </Manifest>
 }
 
@@ -24,6 +27,22 @@ ClassMethod setup(ByRef pVars, pLogLevel As %Integer = 3, pInstaller As %Install
 {
   #; Let XGL document generate code for this method. 
   Quit ##class(%Installer.Manifest).%Generate(%compiledclass, %code, "setup")
+}
+
+ClassMethod enableAnalytics() As %Status
+{
+  try {
+    set ns = $NameSpace
+    zn "%SYS"
+    for webName = "/csp/irisapp" {
+      set webProperties("DeepSeeEnabled") = 1
+      set sc = ##class(Security.Applications).Modify(webName, .webProperties)
+    }
+    set $NameSpace = ns
+  } catch ex {
+    return ex.AsStatus()
+  }
+  return $$$OK
 }
 
 }
