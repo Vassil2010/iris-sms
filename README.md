@@ -69,9 +69,9 @@ $ docker-compose up -d
 
 ## Demo
 
-<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png">
+<img src="https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png">
 
-<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png">
+<img  src="https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png">
 
-<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png">
+<img  src="https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png">
 
