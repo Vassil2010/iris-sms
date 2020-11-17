@@ -68,9 +68,9 @@ w ##class(bondar.irissms.Test).VerifyNumber("79620000000")
 
 2.3.) The business operation checks the code
 
-![production](https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png)
+![production](https://github.com/Vassil2010/iris-sms/raw/master/misc/production.png)
 
-![business-process](https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png)
+![business-process](https://github.com/Vassil2010/iris-sms/raw/master/misc/business-process.png)
 
-![visualtrace](https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png)
+![visualtrace](https://github.com/Vassil2010/iris-sms/raw/master/misc/visualtrace.png)
 
