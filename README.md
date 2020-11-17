@@ -3,25 +3,6 @@ This is a InterSystems IRIS Interoperability solution.
 1) Sends an SMS message to a mobile number
 2) Verify Mobile number by SMS code
 
-## What The Interoperability Does
-
-1) For send SMS:
-
-w ##class(bondar.Test).SendSms("79620000000", "Hello world!")
-
-2) For Verify mobile number:
-
-w ##class(bondar.Test).VerifyNumber("79620000000")
-
-2.1.) Sends a verification code to a mobile number
-
-2.2.) Creates a Workflow task for entering the verification code 
-
-2.3.) The business operation checks the code
-
-
-
-
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
@@ -69,9 +50,27 @@ $ docker-compose up -d
 
 ## Demo
 
-<img src="https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png">
+1) For send SMS:
 
-<img  src="https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png">
+```
+w ##class(bondar.irissms.Test).SendSms("79620000000", "Hello world!")
+```
 
-<img  src="https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png">
+2) For Verify mobile number:
+
+```
+w ##class(bondar.irissms.Test).VerifyNumber("79620000000")
+```
+
+2.1.) Sends a verification code to a mobile number
+
+2.2.) Creates a Workflow task for entering the verification code 
+
+2.3.) The business operation checks the code
+
+![production](https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png)
+
+![business-process](https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png)
+
+![visualtrace](https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png)
 
