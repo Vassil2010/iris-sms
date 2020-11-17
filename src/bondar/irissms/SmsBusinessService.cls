@@ -1,4 +1,4 @@
-Class bondar.nexmo.SmsBusinessService Extends Ens.BusinessService
+Class bondar.irissms.SmsBusinessService Extends Ens.BusinessService
 {
 
 Property Adapter As Ens.InboundAdapter;

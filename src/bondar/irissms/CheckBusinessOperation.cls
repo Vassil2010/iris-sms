@@ -1,13 +1,13 @@
-Class bondar.nexmo.CheckBusinessOperation Extends Ens.BusinessOperation
+Class bondar.irissms.CheckBusinessOperation Extends Ens.BusinessOperation
 {
 
-Property Adapter As bondar.nexmo.OutboundAdapter;
+Property Adapter As bondar.irissms.OutboundAdapter;
 
-Parameter ADAPTER = "bondar.nexmo.OutboundAdapter";
+Parameter ADAPTER = "bondar.irissms.OutboundAdapter";
 
 Parameter INVOCATION = "Queue";
 
-Method CheckNumber(pRequest As bondar.nexmo.VerifyMessage, Output pResponse As bondar.nexmo.VerifyMessageResponce) As %Status
+Method CheckNumber(pRequest As bondar.irissms.VerifyMessage, Output pResponse As bondar.irissms.VerifyMessageResponce) As %Status
 {
     #dim req As %Net.HttpRequest
 	set sc = $$$OK
@@ -31,7 +31,7 @@ Method CheckNumber(pRequest As bondar.nexmo.VerifyMessage, Output pResponse As b
     do req.HttpResponse.Data.Rewind()
     set responseData = ##class(%DynamicObject).%FromJSON(req.HttpResponse.Data.Read())
 	
-	set pResponse = ##class(bondar.nexmo.VerifyMessageResponce).%New()
+	set pResponse = ##class(bondar.irissms.VerifyMessageResponce).%New()
     if responseData.%Get("status")=0 {
 	    set pResponse.isVerify = $$$YES
     } else {
@@ -44,7 +44,7 @@ Method CheckNumber(pRequest As bondar.nexmo.VerifyMessage, Output pResponse As b
 XData MessageMap
 {
 <MapItems>
-    <MapItem MessageType="bondar.nexmo.VerifyMessage">
+    <MapItem MessageType="bondar.irissms.VerifyMessage">
         <Method>CheckNumber</Method>
     </MapItem>
 </MapItems>

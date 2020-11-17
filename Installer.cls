@@ -15,6 +15,9 @@ XData setup
     <CSPApplication Url="/csp/${app}" Directory="${cspdir}${app}"  ServeFiles="1" Recurse="1" MatchRoles=":%DB_${Namespace}" AuthenticationMethods="32"
        
     />
+    <Production Name="bondar.irissms.Production" AutoStart="1">
+      <Credential  Name="nexmo" Overwrite="0"/>
+    </Production>
   </Namespace>
   <Namespace Name="USER">
     <Invoke Class="App.Installer" Method="enableAnalytics" CheckStatus="1">

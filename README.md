@@ -6,14 +6,17 @@ This is a InterSystems IRIS Interoperability solution.
 ## What The Interoperability Does
 
 1) For send SMS:
+
 w ##class(bondar.Test).SendSms("79620000000", "Hello world!")
 
 2) For Verify mobile number:
+
 w ##class(bondar.Test).VerifyNumber("79620000000")
-isVerify=1
 
 2.1.) Sends a verification code to a mobile number
+
 2.2.) Creates a Workflow task for entering the verification code 
+
 2.3.) The business operation checks the code
 
 
@@ -23,7 +26,7 @@ isVerify=1
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Installation: ZPM
-
+Open IRIS Namespace with Interoperability Enabled. Open Terminal and call: USER>zpm "install iris-sms"
 
 ## Installation: Docker
 Clone/git pull the repo into any local directory
@@ -49,9 +52,26 @@ $ docker-compose up -d
 ## Post-installation settings
 
 1. To create an account on https://dashboard.nexmo.com/sign-in
+
 2. Get API key and API Secret
+
 3. Add Credentials  http://localhost:{port}/csp/irisapp/EnsPortal.Credentials.zen
+
 3.1. ID = "nexmo"
+
 3.2. User Name - API key
+
 3.3. Password - API Secret
+
 4. Add the Admin user in Workflow users
+
+5. Start production bondar.irissms.Production
+
+## Demo
+
+<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/production.png">
+
+<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/business-process.png">
+
+<img width="1411" src="https://github.com/Vassil2010/iris-sms/blob/master/misc/visualtrace.png">
+

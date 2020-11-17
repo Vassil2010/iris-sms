@@ -1,11 +1,11 @@
 /// 
-Class bondar.nexmo.VerifyNumberProc Extends Ens.BusinessProcessBPL
+Class bondar.irissms.VerifyNumberProc Extends Ens.BusinessProcessBPL
 {
 
 /// BPL Definition
 XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 {
-<process language='objectscript' request='bondar.nexmo.SmsMessage' response='bondar.nexmo.VerifyMessageResponce' height='2000' width='2000' >
+<process language='objectscript' request='bondar.irissms.SmsMessage' response='bondar.irissms.VerifyMessageResponce' height='2000' width='2000' >
 <context>
 <property name='requestId' type='%String' instantiate='0' >
 <parameters>
@@ -20,12 +20,12 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </context>
 <sequence xend='200' yend='550' >
 <call name='SendCode' target='VerifyBusinessOperation' async='0' timeout='"PT5M"' xpos='200' ypos='250' >
-<request type='bondar.nexmo.SmsMessage' >
+<request type='bondar.irissms.SmsMessage' >
 <assign property="callrequest.To" value="request.To" action="set" />
 <assign property="callrequest.VerifyNumber" value="request.VerifyNumber" action="set" />
 <assign property="callrequest.Text" value="request.Text" action="set" />
 </request>
-<response type='bondar.nexmo.VerifyMessageResponce' >
+<response type='bondar.irissms.VerifyMessageResponce' >
 <assign property="context.requestId" value="callresponse.requestId" action="set" />
 </response>
 </call>
@@ -40,11 +40,11 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </response>
 </call>
 <call name='CheckCode' target='CheckBusinessOperation' async='0' timeout='"PT5M"' xpos='200' ypos='450' >
-<request type='bondar.nexmo.VerifyMessage' >
+<request type='bondar.irissms.VerifyMessage' >
 <assign property="callrequest.requestId" value="context.requestId" action="set" />
 <assign property="callrequest.code" value="context.code" action="set" />
 </request>
-<response type='bondar.nexmo.VerifyMessageResponce' >
+<response type='bondar.irissms.VerifyMessageResponce' >
 <assign property="response.isVerify" value="callresponse.isVerify" action="set" />
 </response>
 </call>

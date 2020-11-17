@@ -1,4 +1,4 @@
-Class bondar.nexmo.SmsMessageResponce Extends Ens.Response
+Class bondar.irissms.SmsMessageResponce Extends Ens.Response
 {
 
 Property Text As %String(MAXLEN = 2000);

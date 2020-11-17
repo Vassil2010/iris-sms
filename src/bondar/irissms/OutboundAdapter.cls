@@ -1,4 +1,4 @@
-Class bondar.nexmo.OutboundAdapter Extends Ens.OutboundAdapter
+Class bondar.irissms.OutboundAdapter Extends Ens.OutboundAdapter
 {
 
 Property SendSmsURL As %String;

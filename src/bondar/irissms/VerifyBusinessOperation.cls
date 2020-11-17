@@ -1,9 +1,9 @@
-Class bondar.nexmo.VerifyBusinessOperation Extends Ens.BusinessOperation
+Class bondar.irissms.VerifyBusinessOperation Extends Ens.BusinessOperation
 {
 
-Property Adapter As bondar.nexmo.OutboundAdapter;
+Property Adapter As bondar.irissms.OutboundAdapter;
 
-Parameter ADAPTER = "bondar.nexmo.OutboundAdapter";
+Parameter ADAPTER = "bondar.irissms.OutboundAdapter";
 
 Parameter INVOCATION = "Queue";
 
@@ -31,7 +31,7 @@ Method VerifyNumber(pRequest As Ens.Request, Output pResponse As Ens.Response) A
     do req.HttpResponse.Data.Rewind()
     set responseData = ##class(%DynamicObject).%FromJSON(req.HttpResponse.Data.Read())
 	
-	set pResponse = ##class(bondar.nexmo.VerifyMessageResponce).%New()
+	set pResponse = ##class(bondar.irissms.VerifyMessageResponce).%New()
 	set pResponse.requestId = responseData.%Get("request_id")
 	
 	quit st
@@ -40,7 +40,7 @@ Method VerifyNumber(pRequest As Ens.Request, Output pResponse As Ens.Response) A
 XData MessageMap
 {
 <MapItems>
-    <MapItem MessageType="bondar.nexmo.SmsMessage">
+    <MapItem MessageType="bondar.irissms.SmsMessage">
         <Method>VerifyNumber</Method>
     </MapItem>
 </MapItems>

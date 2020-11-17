@@ -1,9 +1,9 @@
-Class bondar.nexmo.SmsBusinessOperation Extends Ens.BusinessOperation
+Class bondar.irissms.SmsBusinessOperation Extends Ens.BusinessOperation
 {
 
-Property Adapter As bondar.nexmo.OutboundAdapter;
+Property Adapter As bondar.irissms.OutboundAdapter;
 
-Parameter ADAPTER = "bondar.nexmo.OutboundAdapter";
+Parameter ADAPTER = "bondar.irissms.OutboundAdapter";
 
 Parameter INVOCATION = "Queue";
 
@@ -35,7 +35,7 @@ Method SendSms(pRequest As Ens.Request, Output pResponse As Ens.Response) As %St
     do req.HttpResponse.Data.Rewind()
     set response = ##class(%DynamicObject).%FromJSON(req.HttpResponse.Data.Read())
 	
-	set pResponse = ##class(bondar.nexmo.SmsMessageResponce).%New()
+	set pResponse = ##class(bondar.irissms.SmsMessageResponce).%New()
 	set pResponse.Text = pRequest.Text
 	set pResponse.To = pRequest.To
     set pResponse.MessageId = response.messages.%Get("message-id")
@@ -47,7 +47,7 @@ Method SendSms(pRequest As Ens.Request, Output pResponse As Ens.Response) As %St
 XData MessageMap
 {
 <MapItems>
-    <MapItem MessageType="bondar.nexmo.SmsMessage">
+    <MapItem MessageType="bondar.irissms.SmsMessage">
         <Method>SendSms</Method>
     </MapItem>
 </MapItems>

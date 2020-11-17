@@ -1,4 +1,4 @@
-Class bondar.nexmo.VerifyMessageResponce Extends Ens.Response
+Class bondar.irissms.VerifyMessageResponce Extends Ens.Response
 {
 
 Property requestId As %String(MAXLEN = 200);
