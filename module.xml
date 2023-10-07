@@ -4,12 +4,12 @@
     <Module>
       <Name>iris-sms</Name>
       <Description>Send SMS and Verify Mobile number by SMS code</Description>
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
       <Packaging>module</Packaging>
       <Dependencies>
         <ModuleReference>
           <Name>sslclient</Name>
-          <Version>1.0.1</Version>
+          <Version>1.0.*</Version>
         </ModuleReference>
       </Dependencies>
       <SourcesRoot>src</SourcesRoot>
